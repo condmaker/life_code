@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class SerialInputManager : MonoBehaviour
+public class SerialInputsManager : MonoBehaviour
 {
     [SerializeField]
     private SerialController serialController;
@@ -30,7 +30,7 @@ public class SerialInputManager : MonoBehaviour
         else
         {
             Debug.Log("Message arrived: " + message);
-            onMessage.Invoke(message);
+            onMessage?.Invoke(message);
         }
     }
 

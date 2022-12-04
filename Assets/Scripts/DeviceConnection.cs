@@ -8,7 +8,7 @@ public class DeviceConnection : MonoBehaviour
     private bool connect = true;
 
     [SerializeField]
-    private SerialInputManager inputManager;
+    private SerialInputsManager inputManager;
 
     // Start is called before the first frame update
     void Start()

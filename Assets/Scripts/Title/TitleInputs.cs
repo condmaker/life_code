@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TitleInputs : Title
+public class TitleInputs : Inputs
 {
     public override void OnAsterisk()
     {
