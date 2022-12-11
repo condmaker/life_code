@@ -15,7 +15,7 @@ public class LevelOneInputs : Inputs
     {
         Setup();
 
-        timeBetweenInputs = 5;
+        timeBetweenInputs = 10;
         timer = new WaitForSeconds(timeBetweenInputs);
 
         levelCode = new List<MorseKey>();
@@ -51,10 +51,12 @@ public class LevelOneInputs : Inputs
 
             yield return timer;
 
-            if (confirmedKey != key) penalty -= 1;
+            if (confirmedKey != key)
+            {
+                Debug.Log("Penalty");
+                penalty -= 1;
+            }
             if (penalty <= penaltyThreshold) SceneManager.LoadScene("GameOver");
-
-            Debug.Log("Penalty");
 
             UnreceivedMessage();
 

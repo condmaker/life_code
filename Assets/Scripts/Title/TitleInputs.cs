@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class TitleInputs : Inputs
 {
+    public void Start()
+    {
+        Setup();
+    }
+    
     public override void OnAsterisk()
     {
         SceneManager.LoadScene("Level1");

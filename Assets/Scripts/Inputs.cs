@@ -89,6 +89,7 @@ public abstract class Inputs : MonoBehaviour
 
     private void MessageDecoder(string s)
     {
+        Debug.Log("test");
         switch (s)
         {
             case "KM_KEYDOWN (9)":
@@ -129,7 +130,7 @@ public abstract class Inputs : MonoBehaviour
                 break;
         }
 
-        onCurrentInput.Invoke(currentKey.ToString());
+        onCurrentInput?.Invoke(currentKey.ToString());
     }
 
     public virtual void OnNine()
@@ -395,7 +396,7 @@ public abstract class Inputs : MonoBehaviour
         confirmedKey = currentKey;
         currentKey = MorseKey.None;
 
-        onConfirm.Invoke();
+        onConfirm?.Invoke();
     }
     public virtual void OnNumbSign()
     {
