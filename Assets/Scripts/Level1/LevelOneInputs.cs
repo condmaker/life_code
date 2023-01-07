@@ -8,31 +8,47 @@ public class LevelOneInputs : Inputs
 {
     private WaitForSeconds timer;
 
-    // Code: "BOMB AT 23W45N
+    // Code: "HELLO THIS IS COMMANDER IGOR
 
     // Start is called before the first frame update
     void Start()
     {
         Setup();
 
+        soundManager.PlayMusic(ambientWind, true, 0.2f);
+
         timeBetweenInputs = 10;
         timer = new WaitForSeconds(timeBetweenInputs);
 
         levelCode = new List<MorseKey>();
-        levelCode.Add(MorseKey.B);
+        levelCode.Add(MorseKey.H);
+        levelCode.Add(MorseKey.E);
+        levelCode.Add(MorseKey.L);
+        levelCode.Add(MorseKey.L);
+        levelCode.Add(MorseKey.O);
+        levelCode.Add(MorseKey._);
+        levelCode.Add(MorseKey.T);
+        levelCode.Add(MorseKey.H);
+        levelCode.Add(MorseKey.I);
+        levelCode.Add(MorseKey.S);
+        levelCode.Add(MorseKey._);
+        levelCode.Add(MorseKey.I);
+        levelCode.Add(MorseKey.S);
+        levelCode.Add(MorseKey._);
+        levelCode.Add(MorseKey.C);
         levelCode.Add(MorseKey.O);
         levelCode.Add(MorseKey.M);
-        levelCode.Add(MorseKey.B);
-        levelCode.Add(MorseKey._);
+        levelCode.Add(MorseKey.M);
         levelCode.Add(MorseKey.A);
-        levelCode.Add(MorseKey.T);
-        levelCode.Add(MorseKey._);
-        levelCode.Add(MorseKey.Two);
-        levelCode.Add(MorseKey.Three);
-        levelCode.Add(MorseKey.W);
-        levelCode.Add(MorseKey.Four);
-        levelCode.Add(MorseKey.Five);
         levelCode.Add(MorseKey.N);
+        levelCode.Add(MorseKey.D);
+        levelCode.Add(MorseKey.E);
+        levelCode.Add(MorseKey.R);
+        levelCode.Add(MorseKey._);
+        levelCode.Add(MorseKey.I);
+        levelCode.Add(MorseKey.G);
+        levelCode.Add(MorseKey.O);
+        levelCode.Add(MorseKey.R);
 
         StartCoroutine(BeginLoop());
     }
@@ -41,26 +57,28 @@ public class LevelOneInputs : Inputs
     {
         UnreceivedMessage();
 
-        yield return timer;
-
         foreach (MorseKey key in levelCode)
         {
-            ReceivedMessage();
-
             // Play sound, wait till sound ends too
+            ComputeSound(key);
+            soundManager.PlaySound(codeSoundToPlay, transform.position);
+            yield return new WaitForSeconds(timeForAudio);
 
             yield return timer;
 
             if (confirmedKey != key)
             {
-                Debug.Log("Penalty");
+                Penalty();
                 penalty -= 1;
             }
+
+            ReceivedMessage();
+
+            yield return timerAfter;
+
             if (penalty <= penaltyThreshold) SceneManager.LoadScene("GameOver");
 
             UnreceivedMessage();
-
-            yield return timer;
         }
 
         SceneManager.LoadScene("Level2");

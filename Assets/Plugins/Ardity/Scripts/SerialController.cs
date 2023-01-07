@@ -7,7 +7,11 @@
  */
 
 using UnityEngine;
+using UnityEngine.UI;
 using System.Threading;
+using System.Collections.Generic;
+using System.Linq;
+using System.IO.Ports;
 
 /**
  * This class allows a Unity program to continually check for messages from a
@@ -26,7 +30,7 @@ using System.Threading;
 public class SerialController : MonoBehaviour
 {
     [Tooltip("Port name with which the SerialPort object will be created.")]
-    public string portName = "COM3";
+    public string portName;
 
     [Tooltip("Baud rate that the serial device is using to transmit data.")]
     public int baudRate = 9600;
@@ -55,7 +59,6 @@ public class SerialController : MonoBehaviour
     protected Thread thread;
     protected SerialThreadLines serialThread;
 
-
     // ------------------------------------------------------------------------
     // Invoked whenever the SerialController gameobject is activated.
     // It creates a new thread that tries to connect to the serial device
@@ -63,12 +66,32 @@ public class SerialController : MonoBehaviour
     // ------------------------------------------------------------------------
     void OnEnable()
     {
-        serialThread = new SerialThreadLines(portName, 
-                                             baudRate, 
-                                             reconnectionDelay,
-                                             maxUnreadMessages);
-        thread = new Thread(new ThreadStart(serialThread.RunForever));
-        thread.Start();
+        string[] portNames = SerialPort.GetPortNames();
+
+        foreach (string s in portNames)
+        {
+            portName = s;
+            serialThread = new SerialThreadLines(s,
+                                     baudRate,
+                                     reconnectionDelay,
+                                     maxUnreadMessages);
+
+            thread = new Thread(new ThreadStart(serialThread.RunForever));
+            thread.Start();
+
+            string message = (string)serialThread.ReadMessage();
+
+            if (message == null)
+                continue;
+
+            // Check if the message is plain data or a connect/disconnect event.
+            if (ReferenceEquals(message, SERIAL_DEVICE_CONNECTED))
+                break;
+            else if (ReferenceEquals(message, SERIAL_DEVICE_DISCONNECTED))
+                continue;
+        }
+
+        Debug.Log(portName);
     }
 
     // ------------------------------------------------------------------------

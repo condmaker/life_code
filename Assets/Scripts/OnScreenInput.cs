@@ -11,7 +11,7 @@ public class OnScreenInput : MonoBehaviour
 
     private void Start()
     {
-        GetComponent<TextMeshProUGUI>();
+        text = GetComponent<TextMeshProUGUI>();
 
         input.onCurrentInput += ChangeTitle;
         input.onConfirm += ConfirmTitle;
@@ -19,12 +19,12 @@ public class OnScreenInput : MonoBehaviour
 
     private void ChangeTitle(string s)
     {
-        text.text = "Current Input: " + s.Remove(0, 8);
+        if (s != "None") text.text = "Current Input: " + s;
     }
 
     private void ConfirmTitle()
     {
-        text.text = "Input Sent.";
+        text.text = "Input Confirmed.";
     }
 
 }
