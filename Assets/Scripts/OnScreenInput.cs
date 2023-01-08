@@ -19,7 +19,8 @@ public class OnScreenInput : MonoBehaviour
 
     private void ChangeTitle(string s)
     {
-        if (s != "None") text.text = "Current Input: " + s;
+        if (s == "Special") text.text = "Press # again to close the game.";
+        else if (s != "None") text.text = "Current Input: " + s;
     }
 
     private void ConfirmTitle()

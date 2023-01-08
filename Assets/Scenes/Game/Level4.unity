@@ -685,7 +685,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 927053715}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af0f9b4c73d3b043b9cd3e505bee956, type: 3}
+  m_Script: {fileID: 11500000, guid: d3ec02e9f5544f34caa6c06e0e417b07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 927053717}
@@ -990,7 +990,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 188.3, y: 27.4}
+  m_AnchoredPosition: {x: 188.3, y: 9.81}
   m_SizeDelta: {x: 307.2, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1823550289
@@ -1013,23 +1013,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You''re Yuri, an old Russian man fighting in a war.
-
-
-    You''ve been
-    captured by the Americans and brought to an abandoned basement, where you were
-    tortured for information.
-
-
-    By some miracle, you escaped, and is now trying
-    to communicate with your superiors to receive information and go back to your
-    country and family.
-
-
-    The communication equipment in question-- a radio,
-    disguised as a phone, is your only lifeline, alongside a morse code sheet and
-    equipment instructions. You turn it on, hoping that a message in morse code comes
-    through...'
+  m_text: "You've deciphered the message-- \n\n\"We ask all our soldiers to hold
+    on tight, we will start the new assault shortly.\"\n\nThis means, then, that
+    they are most likely starting a rescue operation. Emboldened by hope, you wait
+    for the next message-- though the blistering wind and bombs from both sides keeps
+    getting stronger."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92082adc7f47cc44d98587c54e3782ca, type: 2}
   m_sharedMaterial: {fileID: -4778935242083543908, guid: 92082adc7f47cc44d98587c54e3782ca, type: 2}

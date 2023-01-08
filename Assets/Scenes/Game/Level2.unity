@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c7df3fa354f9ab64197925796dcad1c9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd16b356ad0a7ca4dae79f002b98dbcf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -685,10 +685,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 927053715}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8af0f9b4c73d3b043b9cd3e505bee956, type: 3}
+  m_Script: {fileID: 11500000, guid: bb060e3fda096b34c9066a63cec5b74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 927053717}
+  soundManager: {fileID: 0}
+  soundA: {fileID: 0}
+  soundB: {fileID: 0}
+  soundC: {fileID: 0}
+  soundD: {fileID: 0}
+  soundE: {fileID: 0}
+  soundF: {fileID: 0}
+  soundG: {fileID: 0}
+  soundH: {fileID: 0}
+  soundI: {fileID: 0}
+  soundJ: {fileID: 0}
+  soundK: {fileID: 0}
+  soundL: {fileID: 0}
+  soundM: {fileID: 0}
+  soundN: {fileID: 0}
+  soundO: {fileID: 0}
+  soundP: {fileID: 0}
+  soundQ: {fileID: 0}
+  soundR: {fileID: 0}
+  soundS: {fileID: 0}
+  soundT: {fileID: 0}
+  soundU: {fileID: 0}
+  soundV: {fileID: 0}
+  soundW: {fileID: 0}
+  soundX: {fileID: 0}
+  soundY: {fileID: 0}
+  soundZ: {fileID: 0}
+  sound0: {fileID: 0}
+  sound1: {fileID: 0}
+  sound2: {fileID: 0}
+  sound3: {fileID: 0}
+  sound4: {fileID: 0}
+  sound5: {fileID: 0}
+  sound6: {fileID: 0}
+  sound7: {fileID: 0}
+  sound8: {fileID: 0}
+  sound9: {fileID: 0}
+  click: {fileID: 0}
+  confirm: {fileID: 0}
+  ambientWind: {fileID: 0}
 --- !u!1 &1262500275
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,12 +1013,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'You''re <CHARACTER>, a old American Man fighting in a war for old men.
-
-
-    Your
-    whole squadron has been wiped out, and you''re only left now with a receiver
-    and messages to decode. Your life depends on this.'
+  m_text: "You've deciphered the message-- \n\n\"Hello, this is Commander Igor\"\n\nThis
+    sparks a faint hope in you, as you realize that your superiors are still communicating
+    with troops in the area, which may give you a chance to escape.\n\nThough the
+    wind is starting to pick up, you ready yourself for the next message."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92082adc7f47cc44d98587c54e3782ca, type: 2}
   m_sharedMaterial: {fileID: -4778935242083543908, guid: 92082adc7f47cc44d98587c54e3782ca, type: 2}

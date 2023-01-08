@@ -77,25 +77,13 @@ public class SoundMng : ScriptableObject
     /// <param name="pos">The position of the SFX on the scene.</param>
     /// <param name="spBlend">If the SFX has spatial blend or not (if its 
     /// 3D or not, essentially)</param>
-    public void PlaySound(AudioClip sound, Vector3 pos, bool spBlend = false)
+    public void PlaySound(AudioClip sound, Vector3 pos, float vol = 1, bool spBlend = false)
     {
         if (sound == null) return;
 
-        // Map decreasing volume. Max decrease is -20 for a smother volume
-        // change
-        float volume = ((float)(
-            ((float)PlayerPrefs.GetInt(
-                "SFX Volume Real", initialVolume)) * 20) / 100) - 20;
-
-        // If value is 0 completely mute audio mixer
-        if (PlayerPrefs.GetInt("SFX Volume Real") == 0)
-            volume = -80;
-
-        // Defines the AudioSource and plays it at the scene
-        Master.audioMixer.SetFloat("sfxVol", volume);
         AudioSource audioSource = NewSoundObject(pos);
         audioSource.clip = sound;
-        audioSource.volume = 1;
+        audioSource.volume = vol;
         if (!spBlend)
             audioSource.spatialBlend = 0.8f;
         else

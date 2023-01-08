@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 278.9, y: 50}
+  m_AnchoredPosition: {x: 0, y: -87.28}
+  m_SizeDelta: {x: 490.7, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &203971034
 MonoBehaviour:
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press * to begin
+  m_text: Press * to close the game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 542a5072e2cae01448a220b97caa8112, type: 2}
   m_sharedMaterial: {fileID: -7481962933846314356, guid: 542a5072e2cae01448a220b97caa8112, type: 2}
@@ -592,7 +592,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 70.17}
+  m_AnchoredPosition: {x: 227.95, y: 41.1}
   m_SizeDelta: {x: 410.9, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &774490650
@@ -742,7 +742,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 70.17}
+  m_AnchoredPosition: {x: 227.95, y: 41.1}
   m_SizeDelta: {x: 410.9, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &886246919
@@ -911,10 +911,50 @@ MonoBehaviour:
   m_GameObject: {fileID: 927053715}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7f347b1df68e97e4a99f8bcb6f205459, type: 3}
+  m_Script: {fileID: 11500000, guid: 143dc965bca9c0540984ae288d7686dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   inputManager: {fileID: 927053717}
+  soundManager: {fileID: 11400000, guid: a0b4901c437d7aa47b58678e3a2bea83, type: 2}
+  soundA: {fileID: 0}
+  soundB: {fileID: 0}
+  soundC: {fileID: 0}
+  soundD: {fileID: 0}
+  soundE: {fileID: 0}
+  soundF: {fileID: 0}
+  soundG: {fileID: 0}
+  soundH: {fileID: 0}
+  soundI: {fileID: 0}
+  soundJ: {fileID: 0}
+  soundK: {fileID: 0}
+  soundL: {fileID: 0}
+  soundM: {fileID: 0}
+  soundN: {fileID: 0}
+  soundO: {fileID: 0}
+  soundP: {fileID: 0}
+  soundQ: {fileID: 0}
+  soundR: {fileID: 0}
+  soundS: {fileID: 0}
+  soundT: {fileID: 0}
+  soundU: {fileID: 0}
+  soundV: {fileID: 0}
+  soundW: {fileID: 0}
+  soundX: {fileID: 0}
+  soundY: {fileID: 0}
+  soundZ: {fileID: 0}
+  sound0: {fileID: 0}
+  sound1: {fileID: 0}
+  sound2: {fileID: 0}
+  sound3: {fileID: 0}
+  sound4: {fileID: 0}
+  sound5: {fileID: 0}
+  sound6: {fileID: 0}
+  sound7: {fileID: 0}
+  sound8: {fileID: 0}
+  sound9: {fileID: 0}
+  click: {fileID: 0}
+  confirm: {fileID: 0}
+  ambientWind: {fileID: 0}
 --- !u!1 &1823550287
 GameObject:
   m_ObjectHideFlags: 0
@@ -950,8 +990,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -70.17}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: -178.1}
+  m_SizeDelta: {x: 671.3, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1823550289
 MonoBehaviour:
@@ -973,7 +1013,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Life Code
+  m_text: 'It appears that you''ve missed too many times...
+
+
+    The message became
+    obscure, and after some time, the Americans found you...
+
+
+    GAME OVER'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 92082adc7f47cc44d98587c54e3782ca, type: 2}
   m_sharedMaterial: {fileID: -4778935242083543908, guid: 92082adc7f47cc44d98587c54e3782ca, type: 2}
@@ -1000,8 +1047,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

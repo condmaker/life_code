@@ -61,7 +61,8 @@ public abstract class Inputs : MonoBehaviour
         Two,
         One,
         Zero,
-        None
+        None,
+        Special
     }
 
     [SerializeField]
@@ -168,7 +169,16 @@ public abstract class Inputs : MonoBehaviour
 
     protected int timeBetweenInputs;
     protected int penalty = 0;
-    protected const int penaltyThreshold = -3; 
+    protected const int penaltyThreshold = -3;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("close");
+            Application.Quit();
+        }
+    }
 
     protected void Setup()
     {
@@ -524,7 +534,29 @@ public abstract class Inputs : MonoBehaviour
     }
     public virtual void OnNumbSign()
     {
+        soundToPlay = click;
+
+        if (prevInput == InputKey.NumbSign)
+            iter += 1;
+        else
+            iter = 0;
+
         prevInput = InputKey.NumbSign;
+
+        switch (iter)
+        {
+            case 0:
+                currentKey = MorseKey.Special;
+                break;
+            case 1:
+                prevInput = InputKey.NumbSign;
+                Debug.Log("close");
+                Application.Quit();
+                break;
+            default:
+                iter = 0;
+                break;
+        }
     }
 
     protected void ComputeSound(MorseKey key)
